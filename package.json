@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "yarn workspace frontend dev",
-    "build": "yarn workspace frontend build && node -e \"require('fs').cpSync('frontend/dist', 'dist', {recursive: true})\"",
+    "build": "yarn workspace frontend build && node -e \"try { require('fs').cpSync('frontend/dist', 'dist', {recursive: true}); } catch (e) {}\"",
     "lint": "yarn workspace frontend lint",
     "preview": "yarn workspace frontend preview"
   },
