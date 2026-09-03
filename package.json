@@ -1,0 +1,27 @@
+{
+  "name": "vision-land-governance-platform",
+  "version": "1.0.0",
+  "description": "National Digital Platform for Research, Policy Innovation, and Evidence-Based Land Governance - SIH 2026",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "yarn workspace frontend dev",
+    "build": "yarn workspace frontend build",
+    "lint": "yarn workspace frontend lint",
+    "preview": "yarn workspace frontend preview"
+  },
+  "keywords": [
+    "sih2026",
+    "blockchain",
+    "gis",
+    "land-governance",
+    "rag",
+    "ai",
+    "postgis",
+    "spring-boot"
+  ],
+  "author": "Team Vision",
+  "license": "MIT"
+}

@@ -1,0 +1,29 @@
+server:
+  port: ${BACKEND_PORT:8080}
+
+spring:
+  application:
+    name: vision-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/vision_land_governance}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres_secure_pass}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+vision:
+  jwt:
+    secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  blockchain:
+    rpc-url: ${BLOCKCHAIN_RPC_URL:http://localhost:8545}
+    contract-address: ${EVIDENCE_LEDGER_CONTRACT_ADDRESS:0x5FbDB2315678afecb367f032d93F642f64180aa3}
+  ai-service:
+    url: ${AI_SERVICE_URL:http://localhost:8000}
