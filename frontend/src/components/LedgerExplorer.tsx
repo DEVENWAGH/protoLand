@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BlockchainBlock } from '../types';
 import { mockValidatorNodes, ValidatorNode } from '../data/mockData';
-import { ShieldCheck, CheckCircle2, Search, Copy, Check, FileCode, ArrowRight, Lock, Server, Cpu, Activity } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Search, Copy, Check, FileCode, ArrowRight, Lock, Server, Cpu, Activity, ExternalLink } from 'lucide-react';
 
 interface LedgerExplorerProps {
   blocks: BlockchainBlock[];
@@ -69,6 +69,23 @@ export const LedgerExplorer: React.FC<LedgerExplorerProps> = ({ blocks }) => {
             <p className="text-xs text-slate-400 mt-1">
               Test SHA-256 integrity of legal gazettes, cadastral surveyor GeoTIFFs, and peer-reviewed research.
             </p>
+            {/* Live Smart Contract Reference */}
+            <div className="flex flex-wrap items-center gap-2 mt-2">
+              <span className="text-[11px] font-mono text-slate-400">Deployed Contract:</span>
+              <a
+                href={import.meta.env.VITE_BLOCKCHAIN_EXPLORER_URL || 'https://amoy.polygonscan.com/address/0xd9145CCE52D386f254917e481eB44e9943F39138'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-blue-950/70 border border-blue-600/50 text-cyan-300 font-mono text-[11px] hover:bg-blue-900/60 transition-all hover:border-cyan-400"
+                title="View Smart Contract on Blockchain Explorer"
+              >
+                <span>{import.meta.env.VITE_CONTRACT_ADDRESS || '0xd9145CCE52D386f254917e481eB44e9943F39138'}</span>
+                <ExternalLink className="w-3 h-3 text-cyan-400 shrink-0" />
+              </a>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-600/40 text-emerald-400">
+                {import.meta.env.VITE_BLOCKCHAIN_NETWORK || 'Polygon Amoy / EVM Testnet'}
+              </span>
+            </div>
           </div>
 
           {/* Quick-Verify Preset Pills for Judges */}
