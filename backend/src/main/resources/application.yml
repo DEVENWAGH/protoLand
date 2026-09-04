@@ -10,7 +10,6 @@ spring:
     password: ${SPRING_DATASOURCE_PASSWORD:postgres_secure_pass}
     driver-class-name: org.postgresql.Driver
   jpa:
-    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
     hibernate:
       ddl-auto: update
     show-sql: false
