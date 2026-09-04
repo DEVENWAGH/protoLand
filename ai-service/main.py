@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List
 from qualification.scoring import EvidenceQualificationEngine
@@ -8,6 +9,15 @@ app = FastAPI(
     title="VISION AI Research & Policy Intelligence API",
     description="Vector search, RAG policy synthesis, and multi-factor evidence qualification for SIH 2026 PS 26019.",
     version="1.0.0"
+)
+
+# Enable CORS for Vercel frontend & local development
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 vector_engine = MockVectorSearchEngine()

@@ -5,3 +5,4 @@ numpy>=1.26.0
 psycopg2-binary>=2.9.9
 requests>=2.32.0
 python-dotenv>=1.0.1
+gradio>=4.0.0
