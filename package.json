@@ -23,5 +23,9 @@
     "spring-boot"
   ],
   "author": "Team Vision",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.17.0",
+    "solc": "^0.8.36"
+  }
 }
